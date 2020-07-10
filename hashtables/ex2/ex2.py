@@ -10,5 +10,12 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
     # Your code here
+    lookup_table = {ticket.source: ticket.destination for ticket in tickets}
+    curr_city = "NONE"
 
-    return route
+    layover = []
+    while len(layover) == 0 or curr_city != "NONE":
+        layover.append(lookup_table[curr_city])
+        curr_city = lookup_table[curr_city]
+
+    return layover

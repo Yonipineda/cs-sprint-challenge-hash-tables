@@ -3,6 +3,9 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    result = set(arrays[0])
+    for i in range(len(arrays)):
+        result = list(set(result) & set(arrays[i]))
 
     return result
 
